@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 app.use(express.json())
 const {bookRouter} = require('./routes/book.routes')
 const {connection} = require('./db')
+app.use(cors())
 
 app.get('/',(req,res) => {
     res.send("Home Page!!")
